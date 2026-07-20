@@ -1,0 +1,741 @@
+/* css/style.css */
+/* ============================================
+   Horizon Realty - Main Stylesheet
+   Student: Hashi Abdihamid Hashi | ID: C1250119
+   ============================================ */
+
+/* ---------- RESET & BASE ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+/* ---------- LAYOUT: FLEXBOX ---------- */
+.flex-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* ---------- FIXED NAVIGATION ---------- */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #1a3a5c, #2a5f7a);
+    color: #fff;
+    padding: 0 2rem;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav-container {
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 70px;
+}
+
+.logo a {
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.logo a:hover {
+    color: #ffd700;
+}
+
+.nav-links {
+    list-style: none;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.nav-links li a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.nav-links li a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+}
+
+.nav-links li a.active {
+    background-color: #ffd700;
+    color: #1a3a5c;
+}
+
+/* ---------- MAIN CONTENT ---------- */
+main {
+    margin-top: 70px;
+    min-height: calc(100vh - 140px);
+}
+
+/* ---------- HERO SECTION ---------- */
+.hero {
+    background: linear-gradient(135deg, rgba(26, 58, 92, 0.85), rgba(42, 95, 122, 0.75)), 
+                url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&h=500&fit=crop') center/cover no-repeat;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.hero-content {
+    max-width: 700px;
+    color: #fff;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content .tagline {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+/* ---------- BUTTONS ---------- */
+.btn-primary {
+    display: inline-block;
+    background: #ffd700;
+    color: #1a3a5c;
+    padding: 0.8rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+}
+
+.btn-primary:hover {
+    background: #ffed4a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5);
+}
+
+.btn-secondary {
+    display: inline-block;
+    background: #6c757d;
+    color: #fff;
+    padding: 0.8rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+}
+
+/* ---------- FEATURED PROPERTIES ---------- */
+.featured-section {
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.featured-section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #1a3a5c;
+    margin-bottom: 2rem;
+}
+
+.featured-grid {
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+/* ---------- PROPERTY CARDS ---------- */
+.property-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 260px;
+    flex: 0 1 auto;
+}
+
+.property-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.property-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+    background: #e9ecef; /* fallback color */
+}
+
+.property-card h3 {
+    padding: 0.8rem 1rem 0.2rem;
+    font-size: 1.2rem;
+    color: #1a3a5c;
+}
+
+.property-card .price {
+    padding: 0 1rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #2a5f7a;
+}
+
+.property-card .desc {
+    padding: 0 1rem 0.5rem;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.property-card .card-link {
+    display: block;
+    padding: 0.7rem 1rem;
+    text-align: center;
+    background: #f0f4f8;
+    color: #1a3a5c;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.property-card .card-link:hover {
+    background: #ffd700;
+}
+
+/* ---------- PAGE HEADER ---------- */
+.page-header {
+    background: linear-gradient(135deg, #1a3a5c, #2a5f7a);
+    color: #fff;
+    padding: 2.5rem 2rem;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.3rem;
+}
+
+/* ---------- GALLERY PAGE ---------- */
+.property-gallery {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.property-gallery h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #1a3a5c;
+    margin-bottom: 1.5rem;
+}
+
+.gallery-grid {
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.gallery-grid figure {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    flex: 0 1 auto;
+}
+
+.gallery-grid figure img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+    background: #e9ecef; /* fallback color */
+}
+
+.gallery-grid figcaption {
+    padding: 0.8rem 1rem;
+    text-align: center;
+    font-weight: 600;
+    color: #1a3a5c;
+}
+
+/* ---------- DATA TABLE ---------- */
+.property-table-section {
+    padding: 1.5rem 2rem 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.property-table-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #1a3a5c;
+    margin-bottom: 1.5rem;
+}
+
+.property-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.property-table thead {
+    background: #1a3a5c;
+    color: #fff;
+}
+
+.property-table th,
+.property-table td {
+    padding: 0.9rem 1rem;
+    text-align: left;
+}
+
+/* Zebra striping using :nth-child */
+.property-table tbody tr:nth-child(even) {
+    background-color: #f2f6fa;
+}
+
+/* Row hover effect */
+.property-table tbody tr:hover {
+    background-color: #ffd700 !important;
+    color: #1a3a5c;
+    cursor: pointer;
+}
+
+.property-table tfoot {
+    background: #e9ecef;
+    font-weight: 600;
+}
+
+/* ---------- EXTERNAL LINKS ---------- */
+.external-links {
+    padding: 1.5rem 2rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.external-links h3 {
+    color: #1a3a5c;
+    margin-bottom: 0.8rem;
+}
+
+.external-links ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.external-links ul li a {
+    color: #2a5f7a;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.4rem 0.8rem;
+    border: 2px solid #2a5f7a;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.external-links ul li a:hover {
+    background: #2a5f7a;
+    color: #fff;
+}
+
+/* ---------- BOOKING FORM ---------- */
+.booking-form-section {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.booking-form {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.booking-form fieldset {
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1.5rem 1.5rem 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.booking-form legend {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1a3a5c;
+    padding: 0 0.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.3rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #2a5f7a;
+}
+
+.form-group textarea {
+    resize: vertical;
+    font-family: inherit;
+}
+
+/* Radio & Checkbox groups using Flexbox */
+.radio-group,
+.checkbox-group {
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.radio-group label,
+.checkbox-group label {
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+}
+
+.radio-group input,
+.checkbox-group input {
+    width: auto;
+    margin-right: 0.2rem;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+/* ---------- HELP PAGE ---------- */
+.help-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.help-topic {
+    background: #fff;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid #ffd700;
+}
+
+.help-topic h2 {
+    color: #1a3a5c;
+    margin-bottom: 0.8rem;
+}
+
+.help-topic ul {
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.help-topic ul li {
+    margin-bottom: 0.3rem;
+}
+
+/* ---------- ABOUT PAGE ---------- */
+.agency-overview {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.agency-overview h2 {
+    color: #1a3a5c;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.agency-overview p {
+    font-size: 1.05rem;
+    color: #444;
+    margin-bottom: 1rem;
+}
+
+.agent-profiles {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem 3rem;
+}
+
+.agent-profiles h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #1a3a5c;
+    margin-bottom: 2rem;
+}
+
+.agent-grid {
+    gap: 2rem;
+    justify-content: center;
+}
+
+.agent-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    width: 320px;
+    flex: 0 1 auto;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.agent-card:hover {
+    transform: translateY(-5px);
+}
+
+.agent-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 1rem;
+    border: 4px solid #ffd700;
+    background: #e9ecef; /* fallback color */
+}
+
+.agent-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.agent-card h3 {
+    color: #1a3a5c;
+    font-size: 1.3rem;
+}
+
+.agent-card .agent-title {
+    color: #2a5f7a;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.agent-card .agent-bio {
+    color: #555;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.agent-card .agent-specialty {
+    color: #1a3a5c;
+    font-size: 0.95rem;
+}
+
+/* ---------- DEVELOPER INFO ---------- */
+.developer-info {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem 3rem;
+}
+
+.developer-info h2 {
+    text-align: center;
+    color: #1a3a5c;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.developer-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.developer-card p {
+    margin-bottom: 0.5rem;
+}
+
+.developer-card ul {
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.developer-card ul li {
+    margin-bottom: 0.3rem;
+}
+
+/* ---------- FOOTER ---------- */
+.site-footer {
+    background: #1a1a2e;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    padding: 1.5rem 2rem;
+    margin-top: 2rem;
+}
+
+.footer-content p {
+    margin: 0.2rem 0;
+}
+
+.footer-content p:last-child {
+    color: #ffd700;
+    font-weight: 500;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        height: auto;
+        padding: 0.5rem 0;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.3rem;
+    }
+
+    .nav-links li a {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content .tagline {
+        font-size: 1.1rem;
+    }
+
+    .featured-grid,
+    .gallery-grid,
+    .agent-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .property-card,
+    .gallery-grid figure,
+    .agent-card {
+        width: 100%;
+        max-width: 360px;
+    }
+
+    .property-table {
+        font-size: 0.85rem;
+    }
+
+    .property-table th,
+    .property-table td {
+        padding: 0.5rem 0.6rem;
+    }
+
+    .radio-group,
+    .checkbox-group {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+
+    .external-links ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        text-align: center;
+    }
+
+    .booking-form {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .property-table {
+        font-size: 0.75rem;
+    }
+
+    .property-table th,
+    .property-table td {
+        padding: 0.3rem 0.4rem;
+    }
+      }
