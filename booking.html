@@ -1,0 +1,125 @@
+<!-- booking.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Horizon Realty · Booking</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏡</text></svg>" />
+</head>
+<body>
+    <!-- Fixed Navigation Bar -->
+    <header class="site-header">
+        <div class="nav-container flex-row">
+            <div class="logo">
+                <a href="index.html">🏡 Horizon Realty</a>
+            </div>
+            <nav aria-label="Main navigation">
+                <ul class="nav-links flex-row">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html">Properties</a></li>
+                    <li><a href="booking.html" class="active">Booking</a></li>
+                    <li><a href="help.html">Help</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h1>Book a Consultation</h1>
+            <p>Search for properties or schedule a viewing with our agents</p>
+        </section>
+
+        <!-- Booking Form -->
+        <section class="booking-form-section">
+            <form action="#" method="POST" class="booking-form">
+                <!-- Personal Information -->
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <div class="form-group">
+                        <label for="fullname">Full Name *</label>
+                        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+252 60 123 4567" />
+                    </div>
+                </fieldset>
+
+                <!-- Property Search & Preferences -->
+                <fieldset>
+                    <legend>Property Search & Preferences</legend>
+                    <div class="form-group">
+                        <label for="agent">Preferred Agent</label>
+                        <select id="agent" name="agent">
+                            <option value="">Select an agent...</option>
+                            <option value="ahmed">Ahmed Hassan</option>
+                            <option value="fatima">Fatima Ali</option>
+                            <option value="omar">Omar Mohamed</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Property Type</label>
+                        <div class="radio-group flex-row">
+                            <label><input type="radio" name="property_type" value="house" /> House</label>
+                            <label><input type="radio" name="property_type" value="apartment" /> Apartment</label>
+                            <label><input type="radio" name="property_type" value="commercial" /> Commercial</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Amenities of Interest</label>
+                        <div class="checkbox-group flex-row">
+                            <label><input type="checkbox" name="amenities" value="parking" /> Parking</label>
+                            <label><input type="checkbox" name="amenities" value="garden" /> Garden</label>
+                            <label><input type="checkbox" name="amenities" value="pool" /> Pool</label>
+                            <label><input type="checkbox" name="amenities" value="security" /> Security</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="budget">Budget Range ($)</label>
+                        <input type="number" id="budget" name="budget" placeholder="e.g., 100000" min="0" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="move_date">Preferred Move-in Date</label>
+                        <input type="date" id="move_date" name="move_date" />
+                    </div>
+                </fieldset>
+
+                <!-- Additional Comments -->
+                <fieldset>
+                    <legend>Additional Information</legend>
+                    <div class="form-group">
+                        <label for="comments">Comments / Special Requests</label>
+                        <textarea id="comments" name="comments" rows="4" placeholder="Any specific requirements or questions..."></textarea>
+                    </div>
+                </fieldset>
+
+                <!-- Submit Button -->
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Submit Booking Request</button>
+                    <button type="reset" class="btn-secondary">Reset Form</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Horizon Realty. All rights reserved.</p>
+            <p>Student: Hashi Abdihamid Hashi | ID: C1250119</p>
+        </div>
+    </footer>
+</body>
+</html>
